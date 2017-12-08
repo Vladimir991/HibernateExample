@@ -1,5 +1,6 @@
+package model;
+
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -9,11 +10,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "client")
-public class User implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private long id;
+public class User extends Model {
 
     @Column(name = "age")
     private int age;
@@ -29,20 +26,12 @@ public class User implements Serializable {
             inverseJoinColumns = {@JoinColumn(name = "role_id")})
     private Set<Role> roles = new HashSet<>();
 
+    public User() {
+        super();
+    }
 
     public User(long id) {
-        this.id = id;
-    }
-
-    public User() {
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
+        super(id);
     }
 
     public int getAge() {

@@ -1,3 +1,5 @@
+package model;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -8,12 +10,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "role")
-public class Role {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private long id;
+public class Role extends Model {
 
     @Column(name = "title")
     private String title;
@@ -22,14 +19,6 @@ public class Role {
     private Set<User> users = new HashSet<>();
 
     public Role() {
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getTitle() {

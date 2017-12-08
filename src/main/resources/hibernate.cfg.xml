@@ -12,7 +12,10 @@
         <property name="hbm2ddl.auto">create</property>
         <property name="show_sql">true</property>
 
-        <mapping class="User"/>
-        <mapping class="Role"/>
+        <mapping class="model.User"/>
+        <mapping class="model.Role"/>
+        <mapping class="model.Order"/>
+        <mapping class="model.Product"/>
+        <mapping class="model.ProductCategory"/>
     </session-factory>
 </hibernate-configuration>
